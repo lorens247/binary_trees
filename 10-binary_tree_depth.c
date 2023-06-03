@@ -13,14 +13,16 @@
  */
 size_t binary_tree_depth(const binary_tree_t *tree)
 {
-	if (tree == NULL)
+	size_t depth = 0;
+
+	if (!tree)
+		return (0);
+
+	while (tree->parent)
 	{
-		return (0);
-	}
-	if (tree->parent == NULL)
-	{	/* tree is a root node */
-		return (0);
+		depth++;
+		tree = tree->parent;
 	}
 
-	return (binary_tree_depth(tree->parent) + 1);
+	return (depth);
 }
