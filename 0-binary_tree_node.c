@@ -9,18 +9,18 @@
  */
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 {
-    // Allocate memory for the new node
-    binary_tree_t *newNode;
-    newNode = (binary_tree_t *)malloc(sizeof(binary_tree_t));
-    if (newNode == NULL)
+    /* Allocate memory for the new node */
+    binary_tree_t *node;
+    node = (binary_tree_t *)malloc(sizeof(binary_tree_t));
+    if (node == NULL)
         return (NULL);
 
-    // Set the parent, value, left child, and right child of the new node
-    newNode->parent = parent;
-    newNode->n = value;
-    newNode->left = NULL;
-    newNode->right = NULL;
+    /* Set the parent, value, left child, and right child of the new node */
+    node->parent = parent;
+    node->n = value;
+    node->left = NULL;
+    node->right = NULL;
 
-    // Return a pointer to the new node
-    return (newNode);
+    /* Return a pointer to the new node */
+    return (node);
 }
